@@ -41,7 +41,7 @@
         bottom: -5px;
         left: 0;
         transform: scaleX(0);
-        transition: transform calc($animation-speed * 0.2s) ease-in-out;
+        transition: getAnimationDuration(0.2s) ease-in-out;
       }
 
       &:hover {
@@ -54,6 +54,68 @@
         color: $primary-color;
         font-weight: bold;
       }
+    }
+  }
+
+  .sidebar-btn {
+    height: 28px;
+    width: 30px;
+    position: relative;
+    display: none;
+
+    .bar {
+      border-radius: 5px;
+      height: 6px;
+      width: 100%;
+      background-color: $text-color;
+      position: absolute;
+      transition: transform getAnimationDuration(0.5s);
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform-origin: right;
+        transform: scaleX(0.8) translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        top: 100%;
+        transform-origin: right;
+        transform: scaleX(1.1) translateY(-100%);
+      }
+    }
+
+    &.active {
+      .bar {
+        transform-origin: center;
+        top: 50%;
+
+        &:nth-child(1) {
+          transform: translate(0, -50%) scale(1) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: scaleX(0) translateY(-50%);
+        }
+
+        &:nth-child(3) {
+          transform: translate(0, -50%) scale(1) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      display: none;
+    }
+    .sidebar-btn {
+      display: block;
     }
   }
 }

@@ -39,3 +39,9 @@ img {
 .container {
   padding-inline: 25vw;
 }
+
+// function
+
+@function getAnimationDuration($duration: number) {
+  @return calc($duration * $animation-speed);
+}
