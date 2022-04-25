@@ -1,22 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ImproveSkills } from './components/ImproveSkills';
-import { Quote } from './components/Quote';
-import { Chiefs } from './components/Chiefs';
+
 import { Footer } from './components/Footer';
+import { Home } from './Pages/Home';
+import { Recipes } from './Pages/Recipes';
+import { Settings } from './Pages/Settings';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
       <div className="container main">
-        <Hero />
-        <ImproveSkills />
-        <Quote />
-        <Chiefs />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
       </div>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
