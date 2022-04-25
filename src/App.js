@@ -2,6 +2,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ImproveSkills } from './components/ImproveSkills';
 import { Quote } from './components/Quote';
+import { Chiefs } from './components/Chiefs';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
         <ImproveSkills />
         <Quote />
+        <Chiefs />
       </div>
     </div>
   );
