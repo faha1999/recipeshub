@@ -31,6 +31,7 @@ img {
   letter-spacing: 1px;
   border-radius: 3px;
   box-shadow: 0 2px 6px $shadow-color;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 1px 3px $shadow-color;
@@ -77,4 +78,36 @@ img {
 // function
 @function getAnimationDuration($duration: number) {
   @return calc($duration * $animation-speed);
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-inline: 18vw;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .container {
+    padding-inline: 12vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    .col {
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+
+  .container {
+    padding-inline: 6vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 3vw;
+  }
 }
