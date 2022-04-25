@@ -6,15 +6,35 @@
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 1em;
   .footer-section {
+    h4 {
+      opacity: 0.9;
+      margin-bottom: 0.5em;
+      font-size: medium;
+    }
     p {
       opacity: 0.9;
       margin-bottom: 0.5em;
+      cursor: pointer;
     }
     p.title {
       opacity: 1;
       font-size: 1.1em;
       font-weight: bold;
       margin-bottom: 1em;
+      cursor: text;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    .footer-section:nth-child(1) {
+      grid-column: span 4;
+    }
+    .footer-section:nth-child(2),
+    .footer-section:nth-child(3) {
+      grid-column: span 2;
     }
   }
 }

@@ -5,11 +5,11 @@ export const Footer = () => {
     <div className="footer container">
       <div className="footer-section">
         <p className="title">FoodiesHub.com</p>
-        <p>
+        <h4>
           FoodiesHub is a place where you can please your soul and tummy with
           delicious food recepies of all cuisine. And our service is absolutely
           free.
-        </p>
+        </h4>
         <p>&copy; 2022 | All Rights Reserved</p>
       </div>
       <div className="footer-section">

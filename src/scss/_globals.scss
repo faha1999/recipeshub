@@ -42,7 +42,7 @@ img {
   padding-block: 3vw;
 }
 .container {
-  padding-inline: 25vw;
+  padding-inline: 20vw;
 }
 
 .section {
@@ -82,12 +82,12 @@ img {
 
 @media screen and (max-width: 1280px) {
   .container {
-    padding-inline: 18vw;
+    padding-inline: 15vw;
   }
 }
 @media screen and (max-width: 1050px) {
   .container {
-    padding-inline: 12vw;
+    padding-inline: 10vw;
   }
 }
 
@@ -108,6 +108,6 @@ img {
 
 @media screen and (max-width: 480px) {
   .container {
-    padding-inline: 3vw;
+    padding-inline: 2vw;
   }
 }
