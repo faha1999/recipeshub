@@ -21,14 +21,14 @@
     transform: translateX(-100%);
     animation: getAnimationDuration(0.3s) slideInLeft forwards;
 
+    &.active {
+      border-left-color: $primary-color;
+    }
+
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
         animation-delay: #{$i * 0.1}s;
       }
-    }
-
-    &.active {
-      border-left-color: $primary-color;
     }
 
     &:hover {
