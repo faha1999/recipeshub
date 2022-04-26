@@ -1,5 +1,10 @@
 import React from 'react';
+import { PrevSearches } from './PrevSearches';
 
 export const Recipes = () => {
-  return <div>Recipes</div>;
+  return (
+    <div>
+      <PrevSearches />
+    </div>
+  );
 };
