@@ -2,46 +2,41 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-export const Settings = () => {
-  const [theme, setTheme] = useState('light');
-  const [primaryColor, setPrimaryColor] = useState(0);
-  const [fontSize, setFontSize] = useState(1);
-  const [animationSpeed, setAnimationSpeed] = useState(1);
-
+export function Settings() {
   const [settings, setSettings] = useState({
-    '$background-color': '#fff',
-    '$background-light': '#fff',
-    '$primary-color': 'rgb(255, 0, 86)',
-    '$shadow-color': 'rgba(0,0,0,0.2)',
-    '$text-color': '#0A0A0A',
-    '$text-light': '#575757',
-    '$font-size': '16px',
-    '$animation-speed': 1,
+    '--background-color': '#fff',
+    '--background-light': '#fff',
+    '--primary-color': 'rgb(255, 0, 86)',
+    '--shadow-color': 'rgba(0,0,0,0.2)',
+    '--text-color': '#0A0A0A',
+    '--text-light': '#575757',
+    '--font-size': '16px',
+    '--animation-speed': 1,
   });
-
-  const themes = [
-    {
-      '$background-color': '#fff',
-      '$background-light': '#fff',
-      '$shadow-color': 'rgba(0,0,0,0.2)',
-      '$text-color': '#0A0A0A',
-      '$text-light': '#575757',
-    },
-    {
-      '$background-color': 'rgb(29, 29, 29)',
-      '$background-light': 'rgb(77, 77, 77)',
-      '$shadow-color': 'rgba(0,0,0,0.2)',
-      '$text-color': '#ffffff',
-      '$text-light': '#eceaea',
-    },
-  ];
-
   useEffect(() => {
     const root = document.documentElement;
     for (let key in settings) {
       root.style.setProperty(key, settings[key]);
     }
   }, [settings]);
+
+  const [theme, setTheme] = useState('light');
+  const themes = [
+    {
+      '--background-color': '#fff',
+      '--background-light': '#fff',
+      '--shadow-color': 'rgba(0,0,0,0.2)',
+      '--text-color': '#0A0A0A',
+      '--text-light': '#575757',
+    },
+    {
+      '--background-color': 'rgb(29, 29, 29)',
+      '--background-light': 'rgb(77, 77, 77)',
+      '--shadow-color': 'rgba(0,0,0,0.2)',
+      '--text-color': '#ffffff',
+      '--text-light': '#eceaea',
+    },
+  ];
 
   function changeTheme(i) {
     const _theme = { ...themes[i] };
@@ -56,7 +51,7 @@ export const Settings = () => {
   function changeColor(i) {
     const _color = primaryColors[i];
     let _settings = { ...settings };
-    _settings['primary-color'] = _color;
+    _settings['--primary-color'] = _color;
     setPrimaryColor(i);
     setSettings(_settings);
   }
@@ -64,7 +59,7 @@ export const Settings = () => {
   function changeFontSize(i) {
     const _size = fontSizes[i];
     let _settings = { ...settings };
-    _settings['font-size'] = _size.value;
+    _settings['--font-size'] = _size.value;
     setFontSize(i);
     setSettings(_settings);
   }
@@ -72,7 +67,7 @@ export const Settings = () => {
   function changeAnimationSpeed(i) {
     let _speed = animationSpeeds[i];
     let _settings = { ...settings };
-    _settings['animation-speed'] = _speed.value;
+    _settings['--animation-speed'] = _speed.value;
     setAnimationSpeed(i);
     setSettings(_settings);
   }
@@ -84,7 +79,6 @@ export const Settings = () => {
     'rgb(0, 200, 83)',
     'rgb(156, 39, 176)',
   ];
-
   const fontSizes = [
     {
       title: 'Small',
@@ -99,7 +93,6 @@ export const Settings = () => {
       value: '20px',
     },
   ];
-
   const animationSpeeds = [
     {
       title: 'Slow',
@@ -114,7 +107,9 @@ export const Settings = () => {
       value: 0.5,
     },
   ];
-
+  const [primaryColor, setPrimaryColor] = useState(0);
+  const [fontSize, setFontSize] = useState(1);
+  const [animationSpeed, setAnimationSpeed] = useState(1);
   return (
     <div>
       <div className="section d-block">
@@ -195,4 +190,4 @@ export const Settings = () => {
       </div>
     </div>
   );
-};
+}
