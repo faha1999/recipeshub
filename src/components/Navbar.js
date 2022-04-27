@@ -34,9 +34,9 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar container">
-        <a href="#!" className="logo">
+        <Link to={'/'} className="logo">
           F<span>oo</span>diesHub
-        </a>
+        </Link>
 
         <div className="nav-links">
           {links.map((link) => (
