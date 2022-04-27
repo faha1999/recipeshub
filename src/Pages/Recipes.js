@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrevSearches } from './PrevSearches';
+import { PrevSearches } from '../components/PrevSearches';
 
 export const Recipes = () => {
   return (
