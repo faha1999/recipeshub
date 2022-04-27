@@ -5,6 +5,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 export const Settings = () => {
   const [theme, setTheme] = useState('light');
   const [primaryColor, setPrimaryColor] = useState(0);
+  const [fontSize, setFontSize] = useState(1);
 
   const primaryColors = [
     'rgb(255, 0, 86)',
@@ -14,8 +15,24 @@ export const Settings = () => {
     'rgb(156, 39, 176)',
   ];
 
+  const fontSizes = [
+    {
+      title: 'Small',
+      value: '12px',
+    },
+    {
+      title: 'Medium',
+      value: '16px',
+    },
+    {
+      title: 'Large',
+      value: '20px',
+    },
+  ];
+
   return (
     <div>
+      {/* Preferred Theme */}
       <div className="section d-block">
         <h2>Preferred Theme</h2>
         <div className="options-container">
@@ -36,6 +53,7 @@ export const Settings = () => {
         </div>
       </div>
 
+      {/* Preferred color */}
       <div className="section d-block">
         <h2>Preferred color</h2>
         <div className="options-container">
@@ -47,6 +65,23 @@ export const Settings = () => {
                 </div>
               )}
             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Font size */}
+      <div className="section d-block">
+        <h2>Font size</h2>
+        <div className="options-container">
+          {fontSizes.map((size, index) => (
+            <button key={index} className="btn">
+              {size.title}
+              {fontSize === index && (
+                <span>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+              )}
+            </button>
           ))}
         </div>
       </div>
