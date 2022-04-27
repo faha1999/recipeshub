@@ -6,6 +6,7 @@ export const Settings = () => {
   const [theme, setTheme] = useState('light');
   const [primaryColor, setPrimaryColor] = useState(0);
   const [fontSize, setFontSize] = useState(1);
+  const [animationSpeed, setAnimationSpeed] = useState(1);
 
   const primaryColors = [
     'rgb(255, 0, 86)',
@@ -27,6 +28,21 @@ export const Settings = () => {
     {
       title: 'Large',
       value: '20px',
+    },
+  ];
+
+  const animationSpeeds = [
+    {
+      title: 'Slow',
+      value: 2,
+    },
+    {
+      title: 'Medium',
+      value: 1,
+    },
+    {
+      title: 'Fast',
+      value: 0.5,
     },
   ];
 
@@ -77,6 +93,23 @@ export const Settings = () => {
             <button key={index} className="btn">
               {size.title}
               {fontSize === index && (
+                <span>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Animation speed */}
+      <div className="section d-block">
+        <h2>Animation speed</h2>
+        <div className="options-container">
+          {animationSpeeds.map((speed, index) => (
+            <button key={index} className="btn">
+              {speed.title}
+              {animationSpeed === index && (
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
