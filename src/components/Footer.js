@@ -1,22 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
     <div className="footer container">
       <div className="footer-section">
-        <p className="title">FoodiesHub.com</p>
+        <Link to={'/'} className="logo">
+          RecipesHub
+        </Link>
+
         <h4>
-          FoodiesHub is a place where you can please your soul and tummy with
-          delicious food recepies of all cuisine. And our service is absolutely
+          RecipesHub is a place where you can please your soul and tummy with
+          delicious food recipes of all cuisine. And our service is absolutely
           free.
         </h4>
+        <br />
         <p>&copy; 2022 | All Rights Reserved</p>
       </div>
       <div className="footer-section">
         <p className="title">Contact Us</p>
-        <p>foodieshub@gmail.com</p>
-        <p>+342-5324-9454</p>
-        <p>2393 Street NYC</p>
+        <p>recipeshub@gmail.com</p>
+        <p>+457-4578-4352</p>
+        <p>456 Street USA</p>
       </div>
       <div className="footer-section">
         <p className="title">Socials</p>

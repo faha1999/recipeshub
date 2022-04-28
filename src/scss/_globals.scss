@@ -64,17 +64,27 @@ img {
   padding-block: 3vw;
 }
 .container {
-  padding-inline: 25vw;
+  padding-inline: 15vw;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: var(--primary-color);
+  text-shadow: 0 1px 3px var(--shadow-color);
+  span {
+    color: var(--text-color);
+  }
 }
 
 @media screen and (max-width: 1280px) {
   .container {
-    padding-inline: 18vw;
+    padding-inline: 14vw;
   }
 }
 @media screen and (max-width: 1050px) {
   .container {
-    padding-inline: 12vw;
+    padding-inline: 10vw;
   }
 }
 
@@ -91,12 +101,12 @@ img {
 
 @media screen and (max-width: 480px) {
   .container {
-    padding-inline: 3vw;
+    padding-inline: 2vw;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    padding-inline: 6vw;
+    padding-inline: 4vw;
   }
 }
